@@ -1,0 +1,6 @@
+- @objects = (1..5).map {|i| "Block #{i}"}
+
+- @object.each do |object|
+  = render :partial => 'object', :object => object
+
+= render :partial => 'object', :collection => @objects
