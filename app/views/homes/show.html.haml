@@ -1,21 +1,16 @@
-- @objects = (1..2).to_a.map {|i| "Block #{i}"}
+- @objects = (1..5).to_a.map {|i| "Block #{i}"}
 !!!
 %html
   %head
     %title HAML whitespace test
   :css
-    .wrapper {width: 500px; background-color: cyan;}
+    .wrapper {background-color: cyan;}
     .wrapper div {width: 48px; display: inline-block;border: 1px solid red;}
   %body
     %h1 HAML whitespace test
-
-    %h2 Loop with render collection
-
-    .wrapper
-      != render :partial => 'object', :collection => @objects
 
     %h2 Loop with render partial
 
     .wrapper
       - @objects.each do |object|
-        != render :partial => 'object', :object => object
+        = render :partial => 'object', :object => object
